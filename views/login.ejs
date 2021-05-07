@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="./js/main.js"></script>
+	<link rel="stylesheet" href="./css/main.css">
+	<title>nodejs-express-mongodb-ejs-registration-and-login-form</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="login-content">
+			<form id="form" method="post">
+				<h1 class="title">Welcome Back!</h1>
+				<div class="mssg bg-danger">
+					<p id="check"></p>
+				</div>
+				<div class="input-div one">
+					<div class="i"> <i class="fas fa-user"></i> </div>
+					<div class="div">
+						<input type="email" placeholder="Email" class="input" required="" name="email"> </div>
+				</div>
+				<div class="input-div one">
+					<div class="i"> <i class="fas fa-user"></i> </div>
+					<div class="div">
+						<input type="password" placeholder="Password" class="input" required="" name="password"> </div>
+				</div> <span>Create a new Account? <a href="/" id="aa">Register here</a></span>
+				<input type="submit" class="btn" value="Login"> </form>
+		</div>
+		<div id="LangTable">
+			<a href="/profile" id="aa"></a>
+		</div>
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$("#form").submit(function(event) {
+			event.preventDefault();
+			$.ajax({
+				type: 'POST',
+				url: '/login',
+				data: $('#form').serialize(),
+				dataType: "json",
+				success: function(response) {
+					$('#form')[0].reset();
+					document.getElementById("check").innerHTML = response.Success;
+					setTimeout(function() {
+						document.getElementById("check").innerHTML = "";
+					}, 3000);
+					if(response.Success == "Success!") {
+						window.location.href = '/profile';
+					};
+				},
+				error: function() {}
+			})
+		});
+	});
+	</script>
+</body>
+
+</html>
