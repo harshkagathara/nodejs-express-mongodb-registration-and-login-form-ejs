@@ -18,4 +18,5 @@ Image:- 2
 <br>
 Image:- 3
 <b>Index Page </b>
-![image](https://user-images.githubusercontent.com/49555360/117457562-f52faf00-af66-11eb-84d4-40f27bc301c6.png)
+
+![image](https://user-images.githubusercontent.com/49555360/117459501-18f3f480-af69-11eb-9f2e-e0d725e74908.png)
