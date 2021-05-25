@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/ourdata', {
+mongoose.connect('mongodb://localhost:27017/LoginData', {
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 }, (err) => {
